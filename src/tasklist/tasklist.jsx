@@ -58,7 +58,8 @@ function TaskList(){
 
     <>
     <Container sx={{marginTop:'10px'}}>
-    <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
+      <Typography variant="h5" align="center">Task</Typography>
+    <List sx={{ width: '100%', bgcolor: 'background.paper' }}>
       {
          taskList.map((i,index)=>{
 
@@ -68,6 +69,7 @@ function TaskList(){
             onChange={(e)=>updateComplete(e.target.checked,index)}
             />
             <ListItemText 
+            
             onClick={()=>{
 
               setIndex(index)
@@ -76,6 +78,7 @@ function TaskList(){
 
             }}
             >{i.taskName}</ListItemText>
+            <ListItemText sx={{width:'20%',textAlign:"",color:i.isComplete?'green':'red'}}>{i.isComplete?"Completed":"Pending"}</ListItemText>
             <IconButton sx={{cursor:'pointer'}}
             onClick={()=>{
 
